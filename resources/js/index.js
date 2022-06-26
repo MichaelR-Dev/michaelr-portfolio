@@ -7,7 +7,6 @@ import { addFloatEvents, addHoverEvents, addSelectDivFloatEvents } from "./Event
 let stateMachine = { toggleAboutMe: false };
 
 
-
 //!ON DOM CONTENT LOADED
 window.addEventListener("load", function(){
 
@@ -19,12 +18,13 @@ window.addEventListener("load", function(){
   const socials = document.getElementsByClassName("socials");
   const banner = document.getElementById("banner");
   const difference = document.getElementById("difference");
+  const aboutMeText = document.getElementById("aboutMeText");
   
   //*Func Invocations
     addHoverEvents(selectable, stateMachine);
     addFloatEvents(mainImage, stateMachine);
     addSelectDivFloatEvents(selectContainer, this.document);
-    mainImage.onclick = () => {  toggleInfo(selectable, socials, undefined, undefined);};
+    mainImage.onclick = () => {  toggleInfo(selectable, socials, undefined, undefined, aboutMeText);};
 
 })
 
@@ -39,23 +39,25 @@ window.addEventListener("load", function(){
  * @param {HTMLImageElement} [banner] Banner (optional) for about page
  * @param {HTMLImageElement} [difference] Difference (optional) for white page background
  */
-const toggleInfo = (selectables, socials, banner, difference) => {
+const toggleInfo = (selectables, socials, banner, difference, aboutMeText) => {
   stateMachine.toggleAboutMe = !stateMachine.toggleAboutMe;
 
   for (const el of selectables) {
     if(el.style.display !== "none"){
         el.animate(fadeOut.animation, fadeOut.timing);
-        setTimeout(() => { el.style.display = 'none';}, fadeOut.timing.duration);
+        setTimeout(() => { el.style.display = 'none'; aboutMeText.style.display = 'initial'; aboutMeText.animate(fadeInSocials.animation, fadeInSocials.timing);}, fadeOut.timing.duration + 20);
     }else{
-      el.style.display = 'initial'; 
-      el.animate(fadeIn.animation, fadeIn.timing);
+
+      aboutMeText.animate(fadeOutSocials.animation, fadeOutSocials.timing);
+      setTimeout(() => { el.style.display = 'initial';  aboutMeText.style.display = 'none'; el.animate(fadeIn.animation, fadeIn.timing);}, fadeOut.timing.duration + 20);
+
     }
   }
 
   for (const el of socials) {
     if(el.style.display !== "none"){
         el.animate(fadeOutSocials.animation, fadeOutSocials.timing);
-        setTimeout(() => { el.style.display = 'none';}, fadeOutSocials.timing.duration);
+        setTimeout(() => { el.style.display = 'none';}, fadeOutSocials.timing.duration + 100);
     }else{
       el.style.display = 'initial'; 
       el.animate(fadeInSocials.animation, fadeInSocials.timing);
