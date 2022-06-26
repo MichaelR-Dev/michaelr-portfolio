@@ -1,0 +1,99 @@
+html{
+    background: url('../images/WebsiteBGDefault.jpg') no-repeat left bottom fixed;
+    background-size: cover;
+}
+
+html header{
+    margin: 0;
+}
+
+html body{
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+
+.navcontent{
+    list-style-type: none;
+    align-self: stretch;
+    text-align: center;
+    padding: 25px 30px;
+    max-width: 100px;
+    flex-grow: 1;
+    transition: background-color .2s ease-in;
+}
+
+#current{
+    background-color:rgba(0,0,0,.10);
+}
+
+.navcontent:hover, #current:hover{
+    background-color:RGBA(0,0,0,.20);
+    transition: background-color .5s ease-out;
+}
+
+.navlink{
+    color: orange;
+    text-shadow: 0 0 5px black, 0 0 10px black;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+#navcontainer{
+    display: flex;
+    margin: 0;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    flex-basis: auto;
+    border-style: double;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-color: black;
+    background: url("../images/WebsiteBG.jpg") no-repeat left bottom fixed;
+    z-index: 1;
+}
+
+#socialsdiv{
+    display: flex;
+    padding-left: 42%;
+}
+
+#socials{
+    align-self: center;
+    justify-self: flex-end;
+    list-style-type: none;
+    text-decoration: none;
+    text-decoration-color: black;
+}
+
+
+#socials a{
+    text-decoration: none;
+    text-decoration-color: black;
+    color: black;
+    margin: 0 5px;
+    font-size: 25px;
+}
+
+
+
+
+
+@media only screen and (max-width: 600px){
+    #navcontainer{
+        width: 97%;
+        height: 40px;
+        margin: auto;
+    }
+
+    .navcontent{
+        padding: 10px 20px;
+    }
+}

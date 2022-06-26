@@ -1,0 +1,293 @@
+/* #region Vanilla Elements */
+
+html{
+    background: url('../images/black-370118.png') no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    font-family: monospace;
+}
+
+html body{
+  margin: 0;
+}
+
+header{
+  margin: 0;
+  width: 100%;
+}
+
+img{
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+/* #endregion Vanilla Elements */
+
+/* #region Animations */
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeInAlt {
+  0% { opacity: 0; }
+  100% { opacity: 0.35; }
+}
+@keyframes hoverFade {
+  0% {opacity: 45%;}
+  100% {opacity: 100%;}
+}
+@keyframes flicker{
+  0% {opacity: 0%;}
+  50% {opacity: 100%;}
+  100% {opacity: 65%;}
+}
+
+@keyframes flickerAlt{
+  0% {opacity: 0%;}
+  50% {opacity: 100%;}
+  100% {opacity: 35%;}
+}
+
+@keyframes flickerSample{
+  0% {opacity: 0%;}
+  50% {opacity: 100%;}
+  100% {opacity: 45%;}
+}
+@keyframes floatIn {
+  from   { transform: translateY(0); }
+  to  { transform: translateY(-20px); }
+}
+@keyframes floatOut {
+  from   { transform: translateY(-20px); }
+  to  { transform: translateY(0); }
+}
+@keyframes hangTime {
+  from {pointer-events: none;}
+  to {pointer-events: initial;}
+}
+
+/* #endregion Animations */
+
+/* #region Navigation */
+
+  .headerText{
+    color: whitesmoke;
+    align-self: center;
+  }
+
+  #navcontainer{
+    display: flex;
+    width: 97%;
+    height: 5%;
+  
+    position: fixed;
+    flex-direction: column;
+    justify-content: space-between;
+  
+    /*border-style: double;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-color: white;*/
+  
+    z-index: 1;
+  }
+  
+  #socialsdiv{ display: flex; flex-wrap: wrap; flex-direction: column; align-content: flex-start; margin-top: 33vh; }
+  
+  .socials{
+    margin-top: 2%;
+
+    align-self: center;
+    justify-self: flex-end;
+    list-style-type: none;
+    text-decoration: none;
+    text-decoration-color: black;
+
+    animation: fadeIn 7s;
+
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .socialsText{
+    align-self: center;
+    justify-self: flex-end;
+    list-style-type: none;
+    text-decoration: none;
+    text-decoration-color: black;
+
+    font-size: 1vw;
+
+    animation: fadeIn 7s;
+
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+  
+  .socials a{
+      text-decoration: none;
+      text-decoration-color: whitesmoke;
+      color: whitesmoke;
+      margin: 0 5px;
+      font-size: 1vw;
+  
+      animation: fadeIn 7s;
+  }
+
+/* #endregion Navigation */
+
+/* #region Main */
+
+  #mainSection{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+  }
+
+  #sectionSelect{
+    position: absolute;
+    display: flex;
+
+    width: 70vw;
+    height: 110vh;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  #sectionSelect > img {
+    flex: 50%;
+
+    width: 30vw;
+    height: 45vh;
+  }
+
+
+  .masked
+  {
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-size: 880px;
+    mask-size: 880px;
+
+    opacity: 65%;
+
+    z-index: 1;
+
+    -webkit-mask-position: bottom;
+    mask-position: bottom;
+
+    animation-name: flicker;
+    animation-duration: 4s;
+
+    width: 30vw;
+    height: 50vh;
+  }
+
+  .masked:hover{
+    cursor: pointer;
+  }
+
+  .tl{ mask-image: url("../images/cloud-mask-tl.png"); -webkit-mask-image: url("../images/cloud-mask-tl.png"); justify-self: flex-start;  mask-size: 50vh;}
+  .bl{ mask-image: url("../images/cloud-mask-bl.png"); -webkit-mask-image: url("../images/cloud-mask-bl.png"); mask-size: 50vh;}
+  .tr{ mask-image: url("../images/cloud-mask-tr.png"); -webkit-mask-image: url("../images/cloud-mask-tr.png"); mask-size: 50vh;}
+  .br{ mask-image: url("../images/cloud-mask-br.png"); -webkit-mask-image: url("../images/cloud-mask-br.png"); justify-self: flex-end;  mask-size: 50vh;}
+
+  #center{
+    width: 35vh;
+    height: 35vh;
+    opacity: 65%;
+
+    animation-name: flicker;
+    animation-duration: 4s;
+
+    border-radius: 25%;
+  }
+
+  #centerBase{
+    display: flex;
+
+    align-self: center;
+    justify-self: center;
+
+    z-index: 2;
+  }
+
+  #centerBase:hover{
+    cursor: pointer;
+  }
+
+  .labelSelect{
+    display: initial;
+
+    position: absolute;
+    color: white;
+    background-color: transparent;
+
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+    font-family: monospace;
+    font-weight: 700;
+
+    opacity: 0;
+
+    font-size: 1.5vh
+  }
+
+  .labeltl{
+    left: 10vw;
+    top: 40vh;
+  }
+
+  .labelbl{
+    left: 10vw;
+    bottom: 40vh;
+  }
+
+  .labeltr{
+    right: 10vw;
+    top: 40vh;
+  }
+
+  .labelbr{
+    right: 10vw;
+    bottom: 40vh;
+  }
+
+/* #endregion Main */
+
+@media only screen and (max-height: 1100px){
+  .labelbl, .labelbr{
+    bottom: 50vh;
+  }
+}
