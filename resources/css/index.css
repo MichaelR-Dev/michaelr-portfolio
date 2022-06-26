@@ -54,7 +54,7 @@ img{
 @keyframes flickerAlt{
   0% {opacity: 0%;}
   50% {opacity: 100%;}
-  100% {opacity: 35%;}
+  100% {opacity: 22%;}
 }
 
 @keyframes flickerSample{
@@ -199,14 +199,14 @@ img{
     -webkit-mask-size: 880px;
     mask-size: 880px;
 
-    opacity: 65%;
+    opacity: 22%;
 
     z-index: 1;
 
     -webkit-mask-position: bottom;
     mask-position: bottom;
 
-    animation-name: flicker;
+    animation-name: flickerAlt;
     animation-duration: 4s;
 
     width: 30vw;

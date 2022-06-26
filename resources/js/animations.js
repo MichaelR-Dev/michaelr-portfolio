@@ -1,5 +1,4 @@
 const hoverFadeOut = {
-
     animation: [
         {opacity: "100%"},
         {opacity: "15%"}
@@ -52,7 +51,7 @@ const fadeInBanner = {
 const fadeIn = {
     animation: [
         { opacity: '0%' },
-        { opacity: '35%'}
+        { opacity: '22%'}
       ],
     timing: {
         duration: 500,
@@ -63,7 +62,7 @@ const fadeIn = {
 
 const fadeOut = {
     animation: [
-        { opacity: '35%' },
+        { opacity: '22%' },
         { opacity: '1%'}
       ],
     timing: {
