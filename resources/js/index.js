@@ -8,15 +8,15 @@ window.addEventListener("load", function(){
   const mainImageContainer = document.getElementById("centerBase");
   const selectable = document.getElementsByClassName("masked");
   const socials = document.getElementsByClassName("socials");
-  //const videoBG = document.getElementById("videoBG");
+  const videoBG = document.getElementById("videoBG");
   const banner = document.getElementById("banner");
   const difference = document.getElementById("difference");
   
 
   addHoverEvents(selectable);
   addFloatEvents(mainImage);
-
   mainImage.onclick = () => {  toggleInfo(selectable, socials, banner, difference);};
+  videoBG.setAttribute('src', "../videos/BG-Loop.mp4");
 })
 
 
