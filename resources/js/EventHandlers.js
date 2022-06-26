@@ -1,5 +1,5 @@
-import { hoverFadeIn, hoverFadeOut, floatIn, floatOut, fadeInBanner, fadeOutBanner } from "./Animations.js";
-import {clamp, getTransformX, getTransformY} from "./Utils.js";
+import { hoverFadeIn, hoverFadeOut, floatIn, floatOut, fadeInBanner, fadeOutBanner } from "./animations.js";
+import { clamp, getTransformX, getTransformY } from "./utils.js";
 
 const addHoverEvents = (selectable, stateMachine) => {
     for (const el of selectable) {

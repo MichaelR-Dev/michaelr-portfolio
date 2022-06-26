@@ -1,5 +1,5 @@
-import { fadeOut, fadeIn, fadeInSocials, fadeOutSocials} from "./Animations.js";
-import {clamp, getTransformX, getTransformY} from "./Utils.js";
+import { fadeOut, fadeIn, fadeInSocials, fadeOutSocials} from "./animations.js";
+import {clamp, getTransformX, getTransformY} from "./utils.js";
 import { addFloatEvents, addHoverEvents, addSelectDivFloatEvents } from "./EventHandlers.js";
 
 //*Global Variables
