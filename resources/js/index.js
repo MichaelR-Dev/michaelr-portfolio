@@ -21,10 +21,10 @@ window.addEventListener("load", function(){
   const aboutMeText = document.getElementById("aboutMeText");
   
   //*Func Invocations
-    addHoverEvents(selectable, stateMachine);
-    addFloatEvents(mainImage, stateMachine);
-    addSelectDivFloatEvents(selectContainer, this.document);
-    mainImage.onclick = () => {  toggleInfo(selectable, socials, undefined, undefined, aboutMeText);};
+  addHoverEvents(selectable, stateMachine);
+  addFloatEvents(mainImage, stateMachine);
+  addSelectDivFloatEvents(selectContainer, this.document);
+  mainImage.onclick = () => {  toggleInfo(selectable, socials, undefined, undefined, aboutMeText);};
 
 })
 

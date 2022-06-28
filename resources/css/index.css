@@ -1,13 +1,13 @@
 /* #region Vanilla Elements */
 
 html{
-    background: url('../images/black-370118.png') no-repeat center top fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background: url('../images/black-370118.png') no-repeat center top fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
-    font-family: monospace;
+  font-family: monospace;
 }
 
 html body{
@@ -167,12 +167,48 @@ img{
     overflow: hidden;
   }
 
+  #aboutMeText{
+    display: none;
+    position: inherit; 
+
+    color: white;
+    font-size: 1.1vh;
+
+    margin-top: 32vh;
+  }
+
+  #aboutMeText > p, #aboutMeText > h3{
+    margin-left: 2vw;
+    margin-right: 65vw;
+  }
+
+  #aboutMeText > p{
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
   #sectionSelect{
     position: absolute;
     display: flex;
 
     width: 70vw;
-    height: 110vh;
+    height: 130vh;
 
     flex-direction: row;
     flex-wrap: wrap;
@@ -196,8 +232,8 @@ img{
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
 
-    -webkit-mask-size: 880px;
-    mask-size: 880px;
+    -webkit-mask-size: contain;
+    mask-size: contain;
 
     opacity: 22%;
 
@@ -218,20 +254,9 @@ img{
   }
 
   .tl{ mask-image: url("../images/cloud-mask-tl.png"); -webkit-mask-image: url("../images/cloud-mask-tl.png"); justify-self: flex-start;  mask-size: 50vh;}
-  .bl{ mask-image: url("../images/cloud-mask-bl.png"); -webkit-mask-image: url("../images/cloud-mask-bl.png"); mask-size: 50vh;}
+  .bl{ mask-image: url("../images/cloud-mask-bl.png"); -webkit-mask-image: url("../images/cloud-mask-bl.png"); mask-size: 50vh; -webkit-mask-position: top; mask-position: top;}
   .tr{ mask-image: url("../images/cloud-mask-tr.png"); -webkit-mask-image: url("../images/cloud-mask-tr.png"); mask-size: 50vh;}
-  .br{ mask-image: url("../images/cloud-mask-br.png"); -webkit-mask-image: url("../images/cloud-mask-br.png"); justify-self: flex-end;  mask-size: 50vh;}
-
-  #center{
-    width: 35vh;
-    height: 35vh;
-    opacity: 65%;
-
-    animation-name: flicker;
-    animation-duration: 4s;
-
-    border-radius: 25%;
-  }
+  .br{ mask-image: url("../images/cloud-mask-br.png"); -webkit-mask-image: url("../images/cloud-mask-br.png"); justify-self: flex-end;  mask-size: 50vh; -webkit-mask-position: top; mask-position: top;}
 
   #centerBase{
     display: flex;
@@ -245,6 +270,20 @@ img{
   #centerBase:hover{
     cursor: pointer;
   }
+
+  #center{
+    width: 35vh;
+    height: 35vh;
+
+    opacity: 65%;
+
+    animation-name: flicker;
+    animation-duration: 4s;
+
+    border-radius: 25%;
+  }
+
+
 
   .labelSelect{
     display: initial;
@@ -275,7 +314,7 @@ img{
 
   .labelbl{
     left: 10vw;
-    bottom: 40vh;
+    bottom: 60vh;
   }
 
   .labeltr{
@@ -285,13 +324,10 @@ img{
 
   .labelbr{
     right: 10vw;
-    bottom: 40vh;
+    bottom: 60vh;
   }
 
 /* #endregion Main */
 
 @media only screen and (max-height: 1100px){
-  .labelbl, .labelbr{
-    bottom: 50vh;
-  }
 }

@@ -14,7 +14,7 @@ const addHoverEvents = (selectable, stateMachine) => {
                 {opacity: `${window.getComputedStyle(el).getPropertyValue("opacity").toString()}`, 
                 transform: `translate(${getTransformX(el)}px, ${getTransformY(el)}px)`}, 
   
-                {opacity: "1", transform: `translate(-100px, -25px)`}], 
+                {opacity: "1", transform: `translate(-10vw, -2.5vh)`}], 
   
                 {
                   duration: 400,
@@ -33,7 +33,7 @@ const addHoverEvents = (selectable, stateMachine) => {
                 {opacity: `${window.getComputedStyle(el).getPropertyValue("opacity").toString()}`, 
                 transform: `translate(${getTransformX(el)}px, ${getTransformY(el)}px)`}, 
   
-                {opacity: "1", transform: `translate(-100px, 25px)`}], 
+                {opacity: "1", transform: `translate(-10vw, 2.5vh)`}], 
   
                 {
                   duration: 400,
@@ -52,7 +52,7 @@ const addHoverEvents = (selectable, stateMachine) => {
                 {opacity: `${window.getComputedStyle(el).getPropertyValue("opacity").toString()}`, 
                 transform: `translate(${getTransformX(el)}px, ${getTransformY(el)}px)`}, 
   
-                {opacity: "1", transform: `translate(100px, -25px)`}], 
+                {opacity: "1", transform: `translate(10vw, -2.5vh)`}], 
   
                 {
                   duration: 400,
@@ -71,7 +71,7 @@ const addHoverEvents = (selectable, stateMachine) => {
                 {opacity: `${window.getComputedStyle(el).getPropertyValue("opacity").toString()}`, 
                 transform: `translate(${getTransformX(el)}px, ${getTransformY(el)}px)`}, 
   
-                {opacity: "1", transform: `translate(100px, 25px)`}], 
+                {opacity: "1", transform: `translate(10vw, 2.5vh)`}], 
   
                 {
                   duration: 400,
@@ -217,12 +217,37 @@ const addHoverEvents = (selectable, stateMachine) => {
       }
     })
   }
-  
-  const addSelectDivFloatEvents = (el, doc) => {
+
+  /*const addSelectDivFloatEvents = (el, doc) => {
     doc.addEventListener("mousemove", (e) => {
-      el.style.left = clamp(e.clientX / 24, 0, 1000) + 320 + "px";
-      el.style.top = clamp(e.clientY / 24, 0, 1000) - 80 + "px";
+      el.style.left = (clamp(e.clientX / 24, 0, 1000) + 320) + "px";
+      el.style.top = (clamp(e.clientY / 24, 0, 1000) - 80) + "px";
+    });
+  }*/
+
+  const addSelectDivFloatEvents = (el, doc) => {
+
+    el.style.left = ((window.innerWidth / 100) * 14.64) + "px";
+    el.style.top = -((window.innerHeight / 100) * 3.76) + "px";
+
+    doc.addEventListener("mousemove", (e) => {
+      el.style.left = (clamp(e.clientX / 24, 0, window.innerWidth) + ((window.innerWidth / 100) * 12.5)) + "px";
+      el.style.top = (clamp(e.clientY / 24, 0, window.innerHeight) - ((window.innerHeight / 100) * 6.01)) + "px";
     });
   }
+  
+  /*const addSelectDivFloatEvents = (el, doc) => {
+    doc.addEventListener("mousemove", (e) => {
+      el.style.left = clamp(e.clientX, (window.innerWidth / 100) * 45, (window.innerWidth / 100) * 55) - (el.offsetWidth / 2) + "px";
+      el.style.top = clamp(e.clientY, (window.innerHeight / 100) * 48, (window.innerHeight / 100) * 51) - (el.offsetHeight / 2) + "px";
+    });
+  }*/
+
+  /*const addSelectDivFloatEvents = (el, doc) => {
+    doc.addEventListener("mousemove", (e) => {
+      el.style.left = ((clamp(e.clientX, (window.innerWidth / 100) * 40, (window.innerWidth / 100) * 60)) / 3.3) + "px";
+      el.style.top = ((clamp(e.clientY, (window.innerHeight / 100) * 45, (window.innerHeight / 100) * 50)) - (window.innerHeight / 2)) + "px";
+    });
+  }*/
 
 export { addFloatEvents, addHoverEvents, addSelectDivFloatEvents }; 
